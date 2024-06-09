@@ -1,4 +1,5 @@
 ﻿#include "Det.h"
+#include "Matrices.h"
 #include "GenerateDet.h"
 #include <iostream>
 
@@ -92,6 +93,16 @@ int main(){
 	Det d9 = GenerateDet::generate(GenerateDet::Type::left_down_triangle, 4);
 	d9.showDet();
 	std::cout << "下三角行列式的值：" << d9.ld_value() << "\n\n";
+
+	//*-----------------------------------------------*
+	std::cout << "测试矩阵\n";
+	Matrices mat1(3, 3, { {1,2,0},{9,3,1},{0,1,3} });
+	Matrices mat2(3, 3, { {1,1,2},{1,2,0},{-1,-2,2} });
+	std::cout << mat1 << '\n';
+	std::cout << mat2 << '\n';
+	std::cout << "矩阵加法：\n" << mat1.add(1) << '\n' << mat1.add(mat2) << '\n';
+	std::cout << "矩阵乘法：\n" << mat1.mul(2) << '\n' << mat1.mul(mat2) << '\n';
+	std::cout << "矩阵减法：\n" << mat1.minus(2) << '\n' << mat1.minus(mat2) << '\n';
 
 	return 0;
 }

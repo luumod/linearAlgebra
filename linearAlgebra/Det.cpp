@@ -15,6 +15,9 @@ int gcd(int a, int b) {
 Det::Det(int n)
 	:det(n, std::vector<int>(n, 0)) {}
 
+Det::Det(int row, int col)
+	:det(row, std::vector<int>(col, 0)) {}
+
 Det::Det(int row, int col, std::vector<std::vector<int>> vec_ls)
 	:det(row, std::vector<int>(col, 0)) {
 	for (int i = 0; i < vec_ls.size(); i++) {
@@ -35,7 +38,7 @@ int& Det::at(int i, int j) {
 	assert(i < det.size() && j < det.size(), "i,j must be eligible for the determinate");
 	return det[i][j];
 }
-void Det::showDet() {
+void Det::showDet()const {
 	for (int i = 0; i < det.size(); i++) {
 		for (int j = 0; j < det[i].size(); j++) {
 			std::cout << det[i][j] << ' ';
@@ -215,4 +218,10 @@ int Det::unfold_col(int col) {
 		res += vec2[i][col] * det[i][col];
 	}
 	return res;
+}
+
+std::ostream& operator<<(std::ostream& out, const Det& lhs)
+{
+	lhs.showDet();
+	return out;
 }

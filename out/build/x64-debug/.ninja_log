@@ -1,7 +1,6 @@
 # ninja log v5
-19	1112	7396037007838696	linearAlgebra/CMakeFiles/linearAlgebra.dir/linearAlgebra.cpp.obj	faca7010095c2ef2
-1114	1451	7396037010573663	linearAlgebra/linearAlgebra.exe	9489344b5932bf9c
-21	932	7396471452604586	linearAlgebra/CMakeFiles/linearAlgebra.dir/GenerateDet.cpp.obj	9ce22076229d4a72
-7	946	7396471452739194	linearAlgebra/CMakeFiles/linearAlgebra.dir/linearAlgebra.cpp.obj	faca7010095c2ef2
-18	954	7396472911785181	linearAlgebra/CMakeFiles/linearAlgebra.dir/Det.cpp.obj	aceb7ab46487089c
-957	1567	7396472916980410	linearAlgebra/linearAlgebra.exe	895d40029989aa24
+7	838	7396513809638591	linearAlgebra/CMakeFiles/linearAlgebra.dir/linearAlgebra.cpp.obj	faca7010095c2ef2
+803	1053	7396516701797995	linearAlgebra/linearAlgebra.exe	91ca58b318f8861e
+34	923	7396512760065179	linearAlgebra/CMakeFiles/linearAlgebra.dir/GenerateDet.cpp.obj	9ce22076229d4a72
+19	800	7396516699894787	linearAlgebra/CMakeFiles/linearAlgebra.dir/Matrices.cpp.obj	13946deef3fb354
+27	1062	7396512761474103	linearAlgebra/CMakeFiles/linearAlgebra.dir/Det.cpp.obj	aceb7ab46487089c
