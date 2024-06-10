@@ -3,13 +3,13 @@
 #include "GenerateDet.h"
 #include <iostream>
 
-int main(){
+int main() {
 	Det d(3, 3, { {1,1,3},{2,1,2},{3,5,3} });
 	d.showDet();
-	std::cout << "原始行列式的值： " << d.detValue()<<'\n';
+	std::cout << "原始行列式的值： " << d.detValue() << '\n';
 	d.T();
 	d.showDet();
-	std::cout << "行列式转置后，值不变 " << d.detValue()<<"\n\n";
+	std::cout << "行列式转置后，值不变 " << d.detValue() << "\n\n";
 
 	Det d1(3, 3, { { 0,0,0 }, { -1,-2,-3 }, { 4,6,3 } });
 	d1.showDet();
@@ -21,14 +21,14 @@ int main(){
 
 	Det d3(3, 3, { { 3,6,9 }, { 12,4,8 }, { 20,25,15 } });
 	d3.showDet();
-	std::cout << "行列式的值："<< d3.detValue() << '\n';
+	std::cout << "行列式的值：" << d3.detValue() << '\n';
 	std::cout << "行列式的某行含有公因子k，则k可以提到外面：" << d3.extractCommonFactor() << "\n\n";
-	
+
 	Det d4(3, 3, { { 3,6,9 }, { 12,4,8 }, { 2,3,4 } });
 	d4.showDet();
 	std::cout << "行列式的值：" << d4.detValue() << '\n';
 	int row1 = 0, row2 = 2;
-	d4.exchange2Row(row1,row2);
+	d4.exchange2Row(row1, row2);
 	d4.showDet();
 	std::cout << "行列式任意两行互换，行列式变号 " << row1 << ", " << row2 << ": " << d4.detValue() << "\n\n";
 
@@ -39,7 +39,7 @@ int main(){
 	row1 = 0, row2 = 2;
 	d5.multiply_K_toAnotherRow(k, row1, row2);
 	d5.showDet();
-	std::cout << "行列式某行元素乘以k倍，加到另一行上去，行列式的值不变 (" <<k<<" * "<< row1 << ") +-> " << row2 << ": " << d5.detValue() << "\n\n";
+	std::cout << "行列式某行元素乘以k倍，加到另一行上去，行列式的值不变 (" << k << " * " << row1 << ") +-> " << row2 << ": " << d5.detValue() << "\n\n";
 
 
 	Det d6(3, 3, { { 1,2,3 }, { 1,0,2}, { 0,1,3 } });
@@ -88,7 +88,7 @@ int main(){
 	std::cout << "行列式按列展开，第2列: " << d8.unfold_col(1) << '\n';
 	std::cout << "行列式按列展开，第3列: " << d8.unfold_col(2) << '\n';
 	std::cout << "行列式按列展开，第4列: " << d8.unfold_col(3) << "\n\n";
-	
+
 
 	Det d9 = GenerateDet::generate(GenerateDet::Type::left_down_triangle, 4);
 	d9.showDet();
@@ -103,6 +103,17 @@ int main(){
 	std::cout << "矩阵加法：\n" << mat1.add(1) << '\n' << mat1.add(mat2) << '\n';
 	std::cout << "矩阵乘法：\n" << mat1.mul(2) << '\n' << mat1.mul(mat2) << '\n';
 	std::cout << "矩阵减法：\n" << mat1.minus(2) << '\n' << mat1.minus(mat2) << '\n';
+
+	mat1.T();
+	std::cout << "矩阵转置：" << '\n' << mat1 << '\n';
+
+
+	Matrices pow_mat(4, 4, { { 1,-1,-1,-1 }, { -1,1,-1,-1 }, { -1,-1,1,-1 },{-1,-1,-1,1} });
+	std::cout <<"****************\n"<< pow_mat << '\n';
+	std::cout << "矩阵的2次幂: " << '\n' << pow_mat.pow(2) << '\n';
+	std::cout << "矩阵的4次幂: " << '\n' << pow_mat.pow(4) << '\n';
+	std::cout << "矩阵的6次幂: " << '\n' << pow_mat.pow(6) << '\n';
+	std::cout << "矩阵的9次幂: " << '\n' << pow_mat.pow(9) << '\n';
 
 	return 0;
 }

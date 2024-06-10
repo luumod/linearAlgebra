@@ -11,6 +11,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& out, const  Matrices& mat);
 
+	void T();
 	//¾ØÕóÏà¼Ó
 	Matrices add(const Matrices& lhs);
 	Matrices add(int num);
@@ -21,7 +22,7 @@ public:
 	Matrices minus(const Matrices& lhs);
 	Matrices minus(int num);
 	//¾ØÕóÃÝ´Î
-	//void add(const Matrices& lhs);
+	Matrices pow(int num);
 
 	Matrices operator+(int num);
 	Matrices operator+(const Matrices& lhs);
@@ -33,5 +34,14 @@ private:
 
 };
 
+//class GenerateMatrices {
+//public:
+//	enum Type {
+//
+//	};
+//	static Matrices generate
+//private:
+//	
+//};
 
 #endif // !MATRICES_H_

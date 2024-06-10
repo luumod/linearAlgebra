@@ -10,6 +10,10 @@ Matrices::Matrices(int row, int col)
 Matrices::Matrices(int row, int col, std::vector<std::vector<int>> vec_ls)
 	:Det(row, col, vec_ls) {}
 
+void Matrices::T(){
+	Det::T();
+}
+
 Matrices Matrices::add(const Matrices& lhs){
 	assert(det.size() == lhs.det.size() && det[0].size() == lhs.det[0].size(), "矩阵相加时，必须是同型矩阵");
 	Matrices add_det(det.size(), det[0].size());
@@ -78,6 +82,15 @@ Matrices Matrices::minus(int num)
 		}
 	}
 	return add_det;
+}
+
+Matrices Matrices::pow(int num)
+{
+	Matrices pow_det(det.size(), det[0].size(), det), temp(pow_det);
+	for (int i = 1; i < num; i++) {
+		pow_det = pow_det * temp;
+	}
+	return pow_det;	
 }
 
 Matrices Matrices::operator+(int num)
